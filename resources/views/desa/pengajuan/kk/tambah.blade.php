@@ -144,14 +144,15 @@
                         </div>
                     </div>
                     <div class="card-header">
-                        <h4 class="card-title">Berkas Persyaratan (Pastikan ukuran file kurang dari 2mb)</h4>
+                        <h4 class="card-title">Berkas Persyaratan (Pastikan ukuran file kurang dari 1mb)</h4>
                     </div>
                     <div class="card-body">
                         <div class="row">
                             <div class="col-6">
                                 <div class="mb-3">
                                     <div class="form-label">Kartu Keluarga Orang Tua Suami</div>
-                                    <input type="file" name="kk_suami" id="" class="form-control">
+                                    <input type="file" name="kk_suami" id="" class="form-control"
+                                        accept="image/*">
                                     @error('kk_suami')
                                         <div class="text-danger">{{ $message }}</div>
                                     @enderror
@@ -160,7 +161,8 @@
                             <div class="col-6">
                                 <div class="mb-3">
                                     <div class="form-label">Kartu Keluarga Orang Tua Istri</div>
-                                    <input type="file" name="kk_istri" id="" class="form-control">
+                                    <input type="file" name="kk_istri" id="" class="form-control"
+                                        accept="image/*">
                                     @error('kk_istri')
                                         <div class="text-danger">{{ $message }}</div>
                                     @enderror
@@ -169,7 +171,8 @@
                             <div class="col-6">
                                 <div class="mb-3">
                                     <div class="form-label">KTP Suami</div>
-                                    <input type="file" name="ktp_suami" id="" class="form-control">
+                                    <input type="file" name="ktp_suami" id="" class="form-control"
+                                        accept="image/*">
                                     @error('ktp_suami')
                                         <div class="text-danger">{{ $message }}</div>
                                     @enderror
@@ -178,7 +181,8 @@
                             <div class="col-6">
                                 <div class="mb-3">
                                     <div class="form-label">KTP Istri</div>
-                                    <input type="file" name="ktp_istri" id="" class="form-control">
+                                    <input type="file" name="ktp_istri" id="" class="form-control"
+                                        accept="image/*">
                                     @error('ktp_istri')
                                         <div class="text-danger">{{ $message }}</div>
                                     @enderror
@@ -187,7 +191,8 @@
                             <div class="col-6">
                                 <div class="mb-3">
                                     <div class="form-label">Buku Nikah / Akta Perkawinan</div>
-                                    <input type="file" name="buku_nikah" id="" class="form-control">
+                                    <input type="file" name="buku_nikah" id="" class="form-control"
+                                        accept="image/*">
                                     @error('buku_nikah')
                                         <div class="text-danger">{{ $message }}</div>
                                     @enderror
@@ -196,7 +201,8 @@
                             <div class="col-6">
                                 <div class="mb-3">
                                     <div class="form-label">Buku Nikah / Akta Perkawinan Orang Tua Suami</div>
-                                    <input type="file" name="buku_nikah_ortu" id="" class="form-control">
+                                    <input type="file" name="buku_nikah_ortu" id="" class="form-control"
+                                        accept="image/*">
                                     @error('buku_nikah_ortu')
                                         <div class="text-danger">{{ $message }}</div>
                                     @enderror
@@ -205,7 +211,8 @@
                             <div class="col-6">
                                 <div class="mb-3">
                                     <div class="form-label">Buku Nikah / Akta Perkawinan Orang Tua Istri</div>
-                                    <input type="file" name="buku_nikah_ortu2" id="" class="form-control">
+                                    <input type="file" name="buku_nikah_ortu2" id="" class="form-control"
+                                        accept="image/*">
                                     @error('buku_nikah_ortu2')
                                         <div class="text-danger">{{ $message }}</div>
                                     @enderror
@@ -215,7 +222,8 @@
                                 <div class="mb-3">
                                     <div class="form-label">Surat Pindah (jika Suami atau Istri dari
                                         Desa/Kecamata/Kabupaten/Provinsi lain)</div>
-                                    <input type="file" name="surat_pindah" id="" class="form-control">
+                                    <input type="file" name="surat_pindah" id="" class="form-control"
+                                        accept="image/*">
                                     @error('surat_pindah')
                                         <div class="text-danger">{{ $message }}</div>
                                     @enderror
@@ -224,7 +232,8 @@
                             <div class="col-6">
                                 <div class="mb-3">
                                     <div class="form-label">Berkas Lainnya (jika diperlukan)</div>
-                                    <input type="file" name="lainnya" id="" class="form-control">
+                                    <input type="file" name="lainnya" id="" class="form-control"
+                                        accept="image/*">
                                     @error('lainnya')
                                         <div class="text-danger">{{ $message }}</div>
                                     @enderror

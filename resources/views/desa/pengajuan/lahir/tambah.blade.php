@@ -246,7 +246,7 @@
                     </div>
                     <div class="card mt-3">
                         <div class="card-header">
-                            <h4 class="card-title">Berkas Persyaratan (Pastikan ukuran file kurang dari 2mb)</h4>
+                            <h4 class="card-title">Berkas Persyaratan (Pastikan ukuran file kurang dari 1mb)</h4>
                         </div>
                         <div class="card-body">
                             <div class="row">
@@ -256,28 +256,34 @@
                                 </div> --}}
                                 <div class="col-6 mb-3">
                                     <div class="form-label">Surat Kelahiran</div>
-                                    <input type="file" name="surat_lahir" id="" class="form-control">
+                                    <input type="file" name="surat_lahir" id="" class="form-control"
+                                        accept="image/*">
                                 </div>
                                 <div class="col-6 mb-3">
                                     <div class="form-label">Kartu Keluarga</div>
-                                    <input type="file" name="kk" id="" class="form-control">
+                                    <input type="file" name="kk" id="" class="form-control"
+                                        accept="image/*">
                                 </div>
                                 <div class="col-6 mb-3">
                                     <div class="form-label">KTP Ayah</div>
-                                    <input type="file" name="ktp_ayah" id="" class="form-control">
+                                    <input type="file" name="ktp_ayah" id="" class="form-control"
+                                        accept="image/*">
                                 </div>
                                 <div class="col-6 mb-3">
                                     <div class="form-label">KTP Ibu</div>
-                                    <input type="file" name="ktp_ibu" id="" class="form-control">
+                                    <input type="file" name="ktp_ibu" id="" class="form-control"
+                                        accept="image/*">
                                 </div>
                                 <div class="col-6 mb-3">
                                     <div class="form-label">Buku Nikah / Akta Pernikahan</div>
-                                    <input type="file" name="buku_nikah" id="" class="form-control">
+                                    <input type="file" name="buku_nikah" id="" class="form-control"
+                                        accept="image/*">
                                 </div>
                                 <div class="col-6">
                                     <div class="mb-3">
                                         <div class="form-label">Berkas Lainnya (jika diperlukan)</div>
-                                        <input type="file" name="lainnya" id="" class="form-control">
+                                        <input type="file" name="lainnya" id="" class="form-control"
+                                            accept="image/*">
                                     </div>
                                 </div>
                             </div>

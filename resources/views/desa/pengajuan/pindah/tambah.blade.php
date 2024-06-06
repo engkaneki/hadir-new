@@ -128,21 +128,24 @@
                     </div>
                     <div class="card mt-3">
                         <div class="card-header">
-                            <h4 class="card-title">Berkas Persyaratan (Pastikan ukuran file kurang dari 2mb)</h4>
+                            <h4 class="card-title">Berkas Persyaratan (Pastikan ukuran file kurang dari 1mb)</h4>
                         </div>
                         <div class="card-body">
                             <div class="row">
                                 <div class="col-6 mb-3">
                                     <div class="form-label">KTP Pelapor</div>
-                                    <input type="file" name="ktp" id="" class="form-control">
+                                    <input type="file" name="ktp" id="" class="form-control"
+                                        accept="image/*">
                                 </div>
                                 <div class="col-6 mb-3">
                                     <div class="form-label">KK Pelapor</div>
-                                    <input type="file" name="kk" id="" class="form-control">
+                                    <input type="file" name="kk" id="" class="form-control"
+                                        accept="image/*">
                                 </div>
                                 <div class="col-6 mb-3">
                                     <div class="form-label">Surat Keterangan Pindah dari Desa</div>
-                                    <input type="file" name="surat_desa" id="" class="form-control">
+                                    <input type="file" name="surat_desa" id="" class="form-control"
+                                        accept="image/*">
                                 </div>
                             </div>
                         </div>
