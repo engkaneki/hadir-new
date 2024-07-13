@@ -40,9 +40,9 @@ class ListDesaController extends Controller
             }
 
             // Pemeriksaan apakah desa sudah memiliki kode_operator
-            if ($desa->kode_operator !== null) {
-                throw new \Exception('Desa sudah memiliki operator');
-            }
+            // if ($desa->kode_operator !== null) {
+            //     throw new \Exception('Desa sudah memiliki operator');
+            // }
 
             $desa->kode_operator = $user->kode_user;
             $desa->save();
