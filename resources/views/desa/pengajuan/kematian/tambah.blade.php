@@ -178,6 +178,11 @@
                                     <input type="file" name="formulir_mati" id="" class="form-control"
                                         accept="image/*">
                                 </div>
+                                <div class="col-6 mb-3">
+                                    <div class="form-label">Berkas F-2.01</div>
+                                    <input type="file" name="f201" id="" class="form-control"
+                                        accept="image/*">
+                                </div>
                             </div>
                         </div>
                         <div class="card-footer text-end">

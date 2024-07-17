@@ -13,6 +13,7 @@ use App\Http\Controllers\Operator\OditolakController;
 use App\Http\Controllers\Operator\OdokterController;
 use App\Http\Controllers\Operator\OpengajuanController;
 use App\Http\Controllers\Operator\OselesaiController;
+use App\Http\Controllers\Parrent\DokumenController;
 use App\Http\Controllers\Parrent\LaporanController;
 use App\Http\Controllers\Parrent\PdashbordController;
 use Illuminate\Support\Facades\Route;
@@ -103,6 +104,12 @@ Route::group(['middleware' => ['auth']], function () {
         Route::controller(ListDesaController::class)->group(function () {
             Route::get('pengguna/operator/desa/{username}', 'index');
             Route::put('listdesa/tambah/{username}', 'tambah');
+        });
+        Route::controller(DokumenController::class)->group(function () {
+            Route::get('parrent/dokumen', 'index')->name('dokumen');
+            Route::post('dokumen/tambah', 'tambah');
+            Route::put('dokumen/edit/{id}', 'edit');
+            Route::delete('dokumen/hapus/{id}', 'hapus');
         });
     });
 
@@ -216,6 +223,9 @@ Route::group(['middleware' => ['auth']], function () {
         Route::controller(BerkasController::class)->group(function () {
             Route::get('berkas/belum', 'belum');
             Route::get('berkas/sudah', 'sudah');
+        });
+        Route::controller(DokumenController::class)->group(function () {
+            Route::get('dokumen', 'desa');
         });
     });
 });

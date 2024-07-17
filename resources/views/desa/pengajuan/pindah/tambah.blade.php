@@ -142,9 +142,14 @@
                                     <input type="file" name="kk" id="" class="form-control"
                                         accept="image/*">
                                 </div>
-                                <div class="col-6 mb-3">
+                                {{-- <div class="col-6 mb-3">
                                     <div class="form-label">Surat Keterangan Pindah dari Desa</div>
                                     <input type="file" name="surat_desa" id="" class="form-control"
+                                        accept="image/*">
+                                </div> --}}
+                                <div class="col-6 mb-3">
+                                    <div class="form-label">Berkas F-1.03</div>
+                                    <input type="file" name="f103" id="" class="form-control"
                                         accept="image/*">
                                 </div>
                             </div>

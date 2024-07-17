@@ -190,6 +190,22 @@
                                         onclick="printFile('{{ asset('storage/uploads/suratpindah/' . $berkas->surat_desa) }}')">Cetak</button>
                                 @endif
                             </div>
+                            <div class="col-6 mb-3">
+                                <div class="form-label">Berkas F-1.03</div>
+                                @if ($berkas->f103 == null)
+                                    <span class="badge bg-red">Tidak ada Berkas</span>
+                                @else
+                                    <a data-fslightbox="gallery"
+                                        href="{{ asset('storage/uploads/suratpindah/' . $berkas->f103) }}"
+                                        target="_blank">
+                                        <div class="img-responsive img-responsive-3x1 rounded-3 border"
+                                            style="background-image: url({{ asset('storage/uploads/suratpindah/' . $berkas->f103) }})">
+                                        </div>
+                                    </a>
+                                    <button class="btn btn-success mt-3"
+                                        onclick="printFile('{{ asset('storage/uploads/suratpindah/' . $berkas->f103) }}')">Cetak</button>
+                                @endif
+                            </div>
                         </div>
                     </div>
                     <div class="card-footer text-end">

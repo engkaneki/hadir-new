@@ -59,15 +59,16 @@ class DpengajuanController extends Controller
             'nik_istri' => 'required|numeric',
             'nama_istri' => 'required|string',
             'det' => 'nullable|string',
-            'kk_suami' => 'nullable|file|mimes:jpeg,png,jpg,gif,pdf|max:1024',
-            'kk_istri' => 'nullable|file|mimes:jpeg,png,jpg,gif,pdf|max:1024',
-            'ktp_suami' => 'nullable|file|mimes:jpeg,png,jpg,gif,pdf|max:1024',
-            'ktp_istri' => 'nullable|file|mimes:jpeg,png,jpg,gif,pdf|max:1024',
-            'buku_nikah' => 'nullable|file|mimes:jpeg,png,jpg,gif,pdf|max:1024',
-            'buku_nikah_ortu' => 'nullable|file|mimes:jpeg,png,jpg,gif,pdf|max:1024',
-            'buku_nikah_ortu2' => 'nullable|file|mimes:jpeg,png,jpg,gif,pdf|max:1024',
-            'surat_pindah' => 'nullable|file|mimes:jpeg,png,jpg,gif,pdf|max:1024',
-            'lainnya' => 'nullable|file|mimes:jpeg,png,jpg,gif,pdf|max:1024',
+            'kk_suami' => 'nullable|file|mimes:jpeg,png,jpg|max:1024',
+            'kk_istri' => 'nullable|file|mimes:jpeg,png,jpg|max:1024',
+            'ktp_suami' => 'nullable|file|mimes:jpeg,png,jpg|max:1024',
+            'ktp_istri' => 'nullable|file|mimes:jpeg,png,jpg|max:1024',
+            'buku_nikah' => 'nullable|file|mimes:jpeg,png,jpg|max:1024',
+            'buku_nikah_ortu' => 'nullable|file|mimes:jpeg,png,jpg|max:1024',
+            'buku_nikah_ortu2' => 'nullable|file|mimes:jpeg,png,jpg|max:1024',
+            'surat_pindah' => 'nullable|file|mimes:jpeg,png,jpg|max:1024',
+            'f101' => 'nullable|file|mimes:jpeg,png,jpg|max:1024',
+            'lainnya' => 'nullable|file|mimes:jpeg,png,jpg|max:1024',
         ], [
             'required' => 'Kolom :attribute wajib diisi.',
             'numeric' => 'Kolom :attribute harus berupa angka.',
@@ -106,6 +107,7 @@ class DpengajuanController extends Controller
             $pengajuanKK->buku_nikah_ortu = $r->file('buku_nikah_ortu') ? $this->uploadKK($r->file('buku_nikah_ortu'), 'nik_buku_nikah_ortu') : null;
             $pengajuanKK->buku_nikah_ortu2 = $r->file('buku_nikah_ortu2') ? $this->uploadKK($r->file('buku_nikah_ortu2'), 'nik_buku_nikah_ortu2') : null;
             $pengajuanKK->surat_pindah = $r->file('surat_pindah') ? $this->uploadKK($r->file('surat_pindah'), 'nik_surat_pindah') : null;
+            $pengajuanKK->f101 = $r->file('f101') ? $this->uploadKK($r->file('f101'), 'nik_f101') : null;
             $pengajuanKK->lainnya = $r->file('lainnya') ? $this->uploadKK($r->file('lainnya'), 'nik_lainnya') : null;
 
             $pengajuanKK->no_hp = $r->input('no_hp');
@@ -162,6 +164,7 @@ class DpengajuanController extends Controller
             $this->hapusFileKK($pengajuanKK->buku_nikah_ortu);
             $this->hapusFileKK($pengajuanKK->buku_nikah_ortu2);
             $this->hapusFileKK($pengajuanKK->surat_pindah);
+            $this->hapusFileKK($pengajuanKK->f101);
             $this->hapusFileKK($pengajuanKK->lainnya);
 
             $pengajuanKK->delete();
@@ -230,13 +233,14 @@ class DpengajuanController extends Controller
             'nik_ayah' => 'required|numeric',
             'nama_ayah' => 'required|string',
             'detail' => 'nullable|string',
-            'surat_pengantar' => 'nullable|file|mimes:jpeg,png,jpg,gif,pdf|max:1024',
-            'surat_lahir' => 'nullable|file|mimes:jpeg,png,jpg,gif,pdf|max:1024',
-            'kk' => 'nullable|file|mimes:jpeg,png,jpg,gif,pdf|max:1024',
-            'ktp_ayah' => 'nullable|file|mimes:jpeg,png,jpg,gif,pdf|max:1024',
-            'ktp_ibu' => 'nullable|file|mimes:jpeg,png,jpg,gif,pdf|max:1024',
-            'buku_nikah' => 'nullable|file|mimes:jpeg,png,jpg,gif,pdf|max:1024',
-            'lainnya' => 'nullable|file|mimes:jpeg,png,jpg,gif,pdf|max:1024',
+            'surat_pengantar' => 'nullable|file|mimes:jpeg,png,jpg|max:1024',
+            'surat_lahir' => 'nullable|file|mimes:jpeg,png,jpg|max:1024',
+            'kk' => 'nullable|file|mimes:jpeg,png,jpg|max:1024',
+            'ktp_ayah' => 'nullable|file|mimes:jpeg,png,jpg|max:1024',
+            'ktp_ibu' => 'nullable|file|mimes:jpeg,png,jpg|max:1024',
+            'buku_nikah' => 'nullable|file|mimes:jpeg,png,jpg|max:1024',
+            'f201' => 'nullable|file|mimes:jpeg,png,jpg|max:1024',
+            'lainnya' => 'nullable|file|mimes:jpeg,png,jpg|max:1024',
         ], [
             'required' => 'Kolom :attribute wajib diisi.',
             'numeric' => 'Kolom :attribute harus berupa angka.',
@@ -271,6 +275,7 @@ class DpengajuanController extends Controller
             $pengajuanLahir->ktp_ayah = $r->file('ktp_ayah') ? $this->uploadLahir($r->file('ktp_ayah'), 'nik_ktp_ayah') : null;
             $pengajuanLahir->ktp_ibu = $r->file('ktp_ibu') ? $this->uploadLahir($r->file('ktp_ibu'), 'nik_ktp_ibu') : null;
             $pengajuanLahir->buku_nikah = $r->file('buku_nikah') ? $this->uploadLahir($r->file('buku_nikah'), 'nik_buku_nikah') : null;
+            $pengajuanLahir->f201 = $r->file('f201') ? $this->uploadLahir($r->file('f201'), 'nik_f201') : null;
             $pengajuanLahir->lainnya = $r->file('lainnya') ? $this->uploadLahir($r->file('lainnya'), 'nik_lainnya') : null;
 
             $pengajuanLahir->no_hp = $r->input('no_hp');
@@ -333,6 +338,7 @@ class DpengajuanController extends Controller
             $this->hapusFileLahir($pengajuanLahir->ktp_ayah);
             $this->hapusFileLahir($pengajuanLahir->ktp_ibu);
             $this->hapusFileLahir($pengajuanLahir->buku_nikah);
+            $this->hapusFileLahir($pengajuanLahir->f201);
             $this->hapusFileLahir($pengajuanLahir->lainnya);
 
             $pengajuanLahir->delete();
@@ -392,12 +398,13 @@ class DpengajuanController extends Controller
             'nama_pelapor' => 'required|string',
             'nik_mati' => 'required|numeric',
             'nama_mati' => 'required|string',
-            'ktp_pelapor' => 'nullable|file|mimes:jpeg,png,jpg,gif,pdf|max:1024',
-            'ktp_mati' => 'nullable|file|mimes:jpeg,png,jpg,gif,pdf|max:1024',
-            'kk' => 'nullable|file|mimes:jpeg,png,jpg,gif,pdf|max:1024',
-            'surat_kuning' => 'nullable|file|mimes:jpeg,png,jpg,gif,pdf|max:1024',
-            'surat_mati_desa' => 'nullable|file|mimes:jpeg,png,jpg,gif,pdf|max:1024',
-            'formulir_mati' => 'nullable|file|mimes:jpeg,png,jpg,gif,pdf|max:1024',
+            'ktp_pelapor' => 'nullable|file|mimes:jpeg,png,jpg|max:1024',
+            'ktp_mati' => 'nullable|file|mimes:jpeg,png,jpg|max:1024',
+            'kk' => 'nullable|file|mimes:jpeg,png,jpg|max:1024',
+            'surat_kuning' => 'nullable|file|mimes:jpeg,png,jpg|max:1024',
+            'surat_mati_desa' => 'nullable|file|mimes:jpeg,png,jpg|max:1024',
+            'formulir_mati' => 'nullable|file|mimes:jpeg,png,jpg|max:1024',
+            'f201' => 'nullable|file|mimes:jpeg,png,jpg|max:1024',
         ], [
             'required' => 'Kolom :attribute harus diisi.',
             'numeric' => 'Kolom :attribute harus berupa angka.',
@@ -431,6 +438,7 @@ class DpengajuanController extends Controller
             $pengajuanMati->surat_kuning = $r->file('surat_kuning') ? $this->uploadKematian($r->file('surat_kuning'), 'nik_surat_kuning') : null;
             $pengajuanMati->surat_mati_desa = $r->file('surat_mati_desa') ? $this->uploadKematian($r->file('surat_mati_desa'), 'nik_surat_mati_desa') : null;
             $pengajuanMati->formulir_mati = $r->file('formulir_mati') ? $this->uploadKematian($r->file('formulir_mati'), 'nik_formulir_mati') : null;
+            $pengajuanMati->f201 = $r->file('f201') ? $this->uploadKematian($r->file('f201'), 'nik_f201') : null;
 
             $pengajuanMati->no_hp = $r->input('no_hp');
             $pengajuanMati->nik_pelapor = $r->input('nik_pelapor');
@@ -484,6 +492,7 @@ class DpengajuanController extends Controller
             $this->hapusFileKematian($pengajuanKematian->surat_kuning);
             $this->hapusFileKematian($pengajuanKematian->surat_mati_desa);
             $this->hapusFileKematian($pengajuanKematian->formulir_mati);
+            $this->hapusFileKematian($pengajuanKematian->f201);
 
             // Hapus data pengajuan kematian
             $pengajuanKematian->delete();
@@ -543,9 +552,10 @@ class DpengajuanController extends Controller
             'nama_pelapor' => 'required|string',
             'alamat_old' => 'required|string',
             'alamat_new' => 'required|string',
-            'ktp' => 'nullable|file|mimes:jpeg,png,jpg,gif,pdf|max:1024',
-            'kk' => 'nullable|file|mimes:jpeg,png,jpg,gif,pdf|max:1024',
-            'surat_desa' => 'nullable|file|mimes:jpeg,png,jpg,gif,pdf|max:1024',
+            'ktp' => 'nullable|file|mimes:jpeg,png,jpg|max:1024',
+            'kk' => 'nullable|file|mimes:jpeg,png,jpg|max:1024',
+            'surat_desa' => 'nullable|file|mimes:jpeg,png,jpg|max:1024',
+            'f103' => 'nullable|file|mimes:jpeg,png,jpg|max:1024',
         ], [
             'required' => 'Kolom :attribute harus diisi.',
             'numeric' => 'Kolom :attribute harus berupa angka.',
@@ -576,6 +586,7 @@ class DpengajuanController extends Controller
             $pengajuanPindah->ktp = $r->file('ktp') ? $this->uploadPindah($r->file('ktp'), 'nik_ktp_pelapor_pindah') : null;
             $pengajuanPindah->kk = $r->file('kk') ? $this->uploadPindah($r->file('kk'), 'nik_kk_pindah') : null;
             $pengajuanPindah->surat_desa = $r->file('surat_desa') ? $this->uploadPindah($r->file('surat_desa'), 'nik_surat_desa_pindah') : null;
+            $pengajuanPindah->f103 = $r->file('f103') ? $this->uploadPindah($r->file('f103'), 'nik_f103_pindah') : null;
 
             $pengajuanPindah->no_hp = $r->input('no_hp');
             $pengajuanPindah->nik_pelapor = $r->input('nik_pelapor');
@@ -625,6 +636,7 @@ class DpengajuanController extends Controller
             $this->hapusFilePindah($pengajuanPindah->ktp);
             $this->hapusFilePindah($pengajuanPindah->kk);
             $this->hapusFilePindah($pengajuanPindah->surat_desa);
+            $this->hapusFilePindah($pengajuanPindah->f103);
 
             $pengajuanPindah->delete();
 

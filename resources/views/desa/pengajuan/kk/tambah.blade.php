@@ -231,6 +231,16 @@
                             </div>
                             <div class="col-6">
                                 <div class="mb-3">
+                                    <div class="form-label">Berkas F-1.01</div>
+                                    <input type="file" name="f101" id="" class="form-control"
+                                        accept="image/*">
+                                    @error('f101')
+                                        <div class="text-danger">{{ $message }}</div>
+                                    @enderror
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="mb-3">
                                     <div class="form-label">Berkas Lainnya (jika diperlukan)</div>
                                     <input type="file" name="lainnya" id="" class="form-control"
                                         accept="image/*">
