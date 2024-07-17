@@ -21,7 +21,7 @@ class LaporanController extends Controller
         $profil_op = ProfilModel::where('kode_user', $user->kode_user)->first();
         $today = Carbon::now();
         $tahun = $today->year;
-        $desa = User::where('level', 3)->get(); // Use get() instead of paginate() to sort before pagination
+        $desa = User::where('level', 3)->paginate(10);
 
         $namaBulan = $today->translatedFormat('F');
 
@@ -35,18 +35,12 @@ class LaporanController extends Controller
                 $desaUser->pengajuanKematianCount + $desaUser->pengajuanSuratPindahCount;
         }
 
-        // Sort the collection by totalPengajuan in descending order
-        $sortedDesa = $desa->sortByDesc('totalPengajuan');
-
-        // Paginate after sorting
-        $paginatedDesa = $sortedDesa->paginate(10);
-
         return view('parrent.laporan.dashboard')->with([
             'user' => $user,
             'profil_op' => optional($profil_op),
             'bulan' => $namaBulan,
             'tahun' => $tahun,
-            'desa' => $paginatedDesa,
+            'desa' => $desa,
         ]);
     }
 
