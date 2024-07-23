@@ -323,7 +323,7 @@
                             </div>
                             <div class="col-6">
                                 <div class="mb-3">
-                                    <div class="form-label">Berkas F-1.01</div>
+                                    <div class="form-label">Berkas F-1.01 Halaman 1</div>
                                     @if ($berkas->f101 == null)
                                         <span class="badge bg-red">Tidak ada Berkas</span>
                                     @else
@@ -336,6 +336,44 @@
                                         </a>
                                         <button class="btn btn-success mt-3"
                                             onclick="printFile('{{ asset('storage/uploads/kk/' . $berkas->f101) }}')">Cetak</button>
+                                    @endif
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="mb-3">
+                                    <div class="form-label">Berkas F-1.01 Halaman 2</div>
+                                    @if ($berkas->f101_hal2 == null)
+                                        <span class="badge bg-red">Tidak ada Berkas</span>
+                                    @else
+                                        <a data-fslightbox="gallery"
+                                            href="{{ asset('storage/uploads/kk/' . $berkas->f101_hal2) }}"
+                                            target="_blank">
+                                            <!-- Photo -->
+                                            <div class="img-responsive img-responsive-3x1 rounded-3 border"
+                                                style="background-image: url({{ asset('storage/uploads/kk/' . $berkas->f101_hal2) }})">
+                                            </div>
+                                        </a>
+                                        <button class="btn btn-success mt-3"
+                                            onclick="printFile('{{ asset('storage/uploads/kk/' . $berkas->f101_hal2) }}')">Cetak</button>
+                                    @endif
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="mb-3">
+                                    <div class="form-label">Berkas F-1.01 Halaman 3</div>
+                                    @if ($berkas->f101_hal3 == null)
+                                        <span class="badge bg-red">Tidak ada Berkas</span>
+                                    @else
+                                        <a data-fslightbox="gallery"
+                                            href="{{ asset('storage/uploads/kk/' . $berkas->f101_hal3) }}"
+                                            target="_blank">
+                                            <!-- Photo -->
+                                            <div class="img-responsive img-responsive-3x1 rounded-3 border"
+                                                style="background-image: url({{ asset('storage/uploads/kk/' . $berkas->f101_hal3) }})">
+                                            </div>
+                                        </a>
+                                        <button class="btn btn-success mt-3"
+                                            onclick="printFile('{{ asset('storage/uploads/kk/' . $berkas->f101_hal3) }}')">Cetak</button>
                                     @endif
                                 </div>
                             </div>

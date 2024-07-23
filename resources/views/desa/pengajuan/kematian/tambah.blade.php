@@ -179,8 +179,23 @@
                                         accept="image/*">
                                 </div>
                                 <div class="col-6 mb-3">
-                                    <div class="form-label">Berkas F-2.01</div>
+                                    <div class="form-label">Berkas F-2.01 Halaman 1</div>
                                     <input type="file" name="f201" id="" class="form-control"
+                                        accept="image/*">
+                                </div>
+                                <div class="col-6 mb-3">
+                                    <div class="form-label">Berkas F-2.01 Halaman 2</div>
+                                    <input type="file" name="f201_hal2" id="" class="form-control"
+                                        accept="image/*">
+                                </div>
+                                <div class="col-6 mb-3">
+                                    <div class="form-label">Berkas F-2.01 Halaman 3</div>
+                                    <input type="file" name="f201_hal3" id="" class="form-control"
+                                        accept="image/*">
+                                </div>
+                                <div class="col-6 mb-3">
+                                    <div class="form-label">Berkas F-2.01 Halaman 4</div>
+                                    <input type="file" name="f201_hal4" id="" class="form-control"
                                         accept="image/*">
                                 </div>
                             </div>

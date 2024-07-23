@@ -68,6 +68,8 @@ class DpengajuanController extends Controller
             'buku_nikah_ortu2' => 'nullable|file|mimes:jpeg,png,jpg|max:1024',
             'surat_pindah' => 'nullable|file|mimes:jpeg,png,jpg|max:1024',
             'f101' => 'nullable|file|mimes:jpeg,png,jpg|max:1024',
+            'f101_hal2' => 'nullable|file|mimes:jpeg,png,jpg|max:1024',
+            'f101_hal3' => 'nullable|file|mimes:jpeg,png,jpg|max:1024',
             'lainnya' => 'nullable|file|mimes:jpeg,png,jpg|max:1024',
         ], [
             'required' => 'Kolom :attribute wajib diisi.',
@@ -108,6 +110,8 @@ class DpengajuanController extends Controller
             $pengajuanKK->buku_nikah_ortu2 = $r->file('buku_nikah_ortu2') ? $this->uploadKK($r->file('buku_nikah_ortu2'), 'nik_buku_nikah_ortu2') : null;
             $pengajuanKK->surat_pindah = $r->file('surat_pindah') ? $this->uploadKK($r->file('surat_pindah'), 'nik_surat_pindah') : null;
             $pengajuanKK->f101 = $r->file('f101') ? $this->uploadKK($r->file('f101'), 'nik_f101') : null;
+            $pengajuanKK->f101_hal2 = $r->file('f101_hal2') ? $this->uploadKK($r->file('f101_hal2'), 'nik_f101_hal2') : null;
+            $pengajuanKK->f101_hal3 = $r->file('f101_hal3') ? $this->uploadKK($r->file('f101_hal3'), 'nik_f101_hal3') : null;
             $pengajuanKK->lainnya = $r->file('lainnya') ? $this->uploadKK($r->file('lainnya'), 'nik_lainnya') : null;
 
             $pengajuanKK->no_hp = $r->input('no_hp');
@@ -165,6 +169,8 @@ class DpengajuanController extends Controller
             $this->hapusFileKK($pengajuanKK->buku_nikah_ortu2);
             $this->hapusFileKK($pengajuanKK->surat_pindah);
             $this->hapusFileKK($pengajuanKK->f101);
+            $this->hapusFileKK($pengajuanKK->f101_hal2);
+            $this->hapusFileKK($pengajuanKK->f101_hal3);
             $this->hapusFileKK($pengajuanKK->lainnya);
 
             $pengajuanKK->delete();
@@ -240,6 +246,9 @@ class DpengajuanController extends Controller
             'ktp_ibu' => 'nullable|file|mimes:jpeg,png,jpg|max:1024',
             'buku_nikah' => 'nullable|file|mimes:jpeg,png,jpg|max:1024',
             'f201' => 'nullable|file|mimes:jpeg,png,jpg|max:1024',
+            'f201_hal2' => 'nullable|file|mimes:jpeg,png,jpg|max:1024',
+            'f201_hal3' => 'nullable|file|mimes:jpeg,png,jpg|max:1024',
+            'f201_hal4' => 'nullable|file|mimes:jpeg,png,jpg|max:1024',
             'lainnya' => 'nullable|file|mimes:jpeg,png,jpg|max:1024',
         ], [
             'required' => 'Kolom :attribute wajib diisi.',
@@ -276,6 +285,9 @@ class DpengajuanController extends Controller
             $pengajuanLahir->ktp_ibu = $r->file('ktp_ibu') ? $this->uploadLahir($r->file('ktp_ibu'), 'nik_ktp_ibu') : null;
             $pengajuanLahir->buku_nikah = $r->file('buku_nikah') ? $this->uploadLahir($r->file('buku_nikah'), 'nik_buku_nikah') : null;
             $pengajuanLahir->f201 = $r->file('f201') ? $this->uploadLahir($r->file('f201'), 'nik_f201') : null;
+            $pengajuanLahir->f201_hal2 = $r->file('f201_hal2') ? $this->uploadLahir($r->file('f201_hal2'), 'nik_f201_hal2') : null;
+            $pengajuanLahir->f201_hal3 = $r->file('f201_hal3') ? $this->uploadLahir($r->file('f201_hal3'), 'nik_f201_hal3') : null;
+            $pengajuanLahir->f201_hal4 = $r->file('f201_hal4') ? $this->uploadLahir($r->file('f201_hal4'), 'nik_f201_hal4') : null;
             $pengajuanLahir->lainnya = $r->file('lainnya') ? $this->uploadLahir($r->file('lainnya'), 'nik_lainnya') : null;
 
             $pengajuanLahir->no_hp = $r->input('no_hp');
@@ -339,6 +351,9 @@ class DpengajuanController extends Controller
             $this->hapusFileLahir($pengajuanLahir->ktp_ibu);
             $this->hapusFileLahir($pengajuanLahir->buku_nikah);
             $this->hapusFileLahir($pengajuanLahir->f201);
+            $this->hapusFileLahir($pengajuanLahir->f201_hal2);
+            $this->hapusFileLahir($pengajuanLahir->f201_hal3);
+            $this->hapusFileLahir($pengajuanLahir->f201_hal4);
             $this->hapusFileLahir($pengajuanLahir->lainnya);
 
             $pengajuanLahir->delete();
@@ -405,6 +420,9 @@ class DpengajuanController extends Controller
             'surat_mati_desa' => 'nullable|file|mimes:jpeg,png,jpg|max:1024',
             'formulir_mati' => 'nullable|file|mimes:jpeg,png,jpg|max:1024',
             'f201' => 'nullable|file|mimes:jpeg,png,jpg|max:1024',
+            'f201_hal2' => 'nullable|file|mimes:jpeg,png,jpg|max:1024',
+            'f201_hal3' => 'nullable|file|mimes:jpeg,png,jpg|max:1024',
+            'f201_hal4' => 'nullable|file|mimes:jpeg,png,jpg|max:1024',
         ], [
             'required' => 'Kolom :attribute harus diisi.',
             'numeric' => 'Kolom :attribute harus berupa angka.',
@@ -439,6 +457,9 @@ class DpengajuanController extends Controller
             $pengajuanMati->surat_mati_desa = $r->file('surat_mati_desa') ? $this->uploadKematian($r->file('surat_mati_desa'), 'nik_surat_mati_desa') : null;
             $pengajuanMati->formulir_mati = $r->file('formulir_mati') ? $this->uploadKematian($r->file('formulir_mati'), 'nik_formulir_mati') : null;
             $pengajuanMati->f201 = $r->file('f201') ? $this->uploadKematian($r->file('f201'), 'nik_f201') : null;
+            $pengajuanMati->f201_hal2 = $r->file('f201_hal2') ? $this->uploadKematian($r->file('f201_hal2'), 'nik_f201_hal2') : null;
+            $pengajuanMati->f201_hal3 = $r->file('f201_hal3') ? $this->uploadKematian($r->file('f201_hal3'), 'nik_f201_hal3') : null;
+            $pengajuanMati->f201_hal4 = $r->file('f201_hal4') ? $this->uploadKematian($r->file('f201_hal4'), 'nik_f201_hal4') : null;
 
             $pengajuanMati->no_hp = $r->input('no_hp');
             $pengajuanMati->nik_pelapor = $r->input('nik_pelapor');
@@ -493,6 +514,9 @@ class DpengajuanController extends Controller
             $this->hapusFileKematian($pengajuanKematian->surat_mati_desa);
             $this->hapusFileKematian($pengajuanKematian->formulir_mati);
             $this->hapusFileKematian($pengajuanKematian->f201);
+            $this->hapusFileKematian($pengajuanKematian->f201_hal2);
+            $this->hapusFileKematian($pengajuanKematian->f201_hal3);
+            $this->hapusFileKematian($pengajuanKematian->f201_hal4);
 
             // Hapus data pengajuan kematian
             $pengajuanKematian->delete();

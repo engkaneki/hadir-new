@@ -231,10 +231,30 @@
                             </div>
                             <div class="col-6">
                                 <div class="mb-3">
-                                    <div class="form-label">Berkas F-1.01</div>
+                                    <div class="form-label">Berkas F-1.01 Halaman 1</div>
                                     <input type="file" name="f101" id="" class="form-control"
                                         accept="image/*">
                                     @error('f101')
+                                        <div class="text-danger">{{ $message }}</div>
+                                    @enderror
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="mb-3">
+                                    <div class="form-label">Berkas F-1.01 Halaman 2</div>
+                                    <input type="file" name="f101_hal2" id="" class="form-control"
+                                        accept="image/*">
+                                    @error('f101_hal2')
+                                        <div class="text-danger">{{ $message }}</div>
+                                    @enderror
+                                </div>
+                            </div>
+                            <div class="col-6">
+                                <div class="mb-3">
+                                    <div class="form-label">Berkas F-1.01 Halaman 3</div>
+                                    <input type="file" name="f101_hal3" id="" class="form-control"
+                                        accept="image/*">
+                                    @error('f101_hal3')
                                         <div class="text-danger">{{ $message }}</div>
                                     @enderror
                                 </div>
