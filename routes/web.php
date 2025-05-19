@@ -170,62 +170,65 @@ Route::group(['middleware' => ['auth']], function () {
     });
 
     Route::group(['middleware' => ['cekUserLogin:3']], function () {
-        Route::controller(DdashboardController::class)->group(function () {
-            Route::get('/', 'index');
-            Route::get('/chart-data', 'chartData');
-            Route::get('profil', 'profil');
-            Route::post('profil/update', 'profilupdate');
-            Route::post('profil/updatefoto', 'updatefoto');
-            Route::post('profil/updatepassword', 'updatepassword');
+        Route::get('/', function () {
+            return view('welcome');
         });
-        Route::controller(DpengajuanController::class)->group(function () {
-            Route::get('pengajuan/kk', 'index')->name('pengajuan-kk');
-            Route::get('pengajuan/kk/tambah', 'tambahkk');
-            Route::post('pengajuan/kk/simpan', 'simpankk');
-            Route::get('pengajuan/kk/detail/{id}', 'detailkk');
-            Route::delete('pengajuan/kk/hapus/{id}', 'hapuskk');
-            Route::get('pengajuan/lahir', 'lahir')->name('pengajuan-lahir');
-            Route::get('pengajuan/lahir/tambah', 'tambahlahir');
-            Route::post('pengajuan/lahir/simpan', 'simpanlahir');
-            Route::get('pengajuan/lahir/detail/{id}', 'detaillahir');
-            Route::delete('pengajuan/lahir/hapus/{id}', 'hapuslahir');
-            Route::get('pengajuan/kematian', 'kematian')->name('pengajuan-kematian');
-            Route::get('pengajuan/kematian/tambah', 'tambahkematian');
-            Route::post('pengajuan/kematian/simpan', 'simpankematian');
-            Route::get('pengajuan/kematian/detail/{id}', 'detailkematian');
-            Route::delete('pengajuan/kematian/hapus/{id}', 'hapuskematian');
-            Route::get('pengajuan/pindah', 'pindah')->name('pengajuan-pindah');
-            Route::get('pengajuan/pindah/tambah', 'tambahpindah');
-            Route::post('pengajuan/pindah/simpan', 'simpanpindah');
-            Route::get('pengajuan/pindah/detail/{id}', 'detailpindah');
-            Route::delete('pengajuan/pindah/hapus/{id}', 'hapuspindah');
-        });
-        Route::controller(DselesaiController::class)->group(function () {
-            Route::get('selesai/kk', 'index');
-            Route::get('selesai/kk/detail/{id}', 'detailkk');
-            Route::get('selesai/lahir', 'selesailahir');
-            Route::get('selesai/lahir/detail/{id}', 'detaillahir');
-            Route::get('selesai/kematian', 'selesaikematian');
-            Route::get('selesai/kematian/detail/{id}', 'detailkematian');
-            Route::get('selesai/pindah', 'selesaipindah');
-            Route::get('selesai/pindah/detail/{id}', 'detailpindah');
-        });
-        Route::controller(DditolakController::class)->group(function () {
-            Route::get('ditolak/kk', 'index');
-            Route::get('ditolak/kk/detail/{id}', 'detailkk');
-            Route::get('ditolak/lahir', 'ditolaklahir');
-            Route::get('ditolak/lahir/detail/{id}', 'detaillahir');
-            Route::get('ditolak/kematian', 'ditolakkematian');
-            Route::get('ditolak/kematian/detail/{id}', 'detailkematian');
-            Route::get('ditolak/pindah', 'ditolakpindah');
-            Route::get('ditolak/pindah/detail/{id}', 'detailpindah');
-        });
-        Route::controller(BerkasController::class)->group(function () {
-            Route::get('berkas/belum', 'belum');
-            Route::get('berkas/sudah', 'sudah');
-        });
-        Route::controller(DokumenController::class)->group(function () {
-            Route::get('dokumen', 'desa');
-        });
+        // Route::controller(DdashboardController::class)->group(function () {
+        //     Route::get('/', 'index');
+        //     Route::get('/chart-data', 'chartData');
+        //     Route::get('profil', 'profil');
+        //     Route::post('profil/update', 'profilupdate');
+        //     Route::post('profil/updatefoto', 'updatefoto');
+        //     Route::post('profil/updatepassword', 'updatepassword');
+        // });
+        // Route::controller(DpengajuanController::class)->group(function () {
+        //     Route::get('pengajuan/kk', 'index')->name('pengajuan-kk');
+        //     Route::get('pengajuan/kk/tambah', 'tambahkk');
+        //     Route::post('pengajuan/kk/simpan', 'simpankk');
+        //     Route::get('pengajuan/kk/detail/{id}', 'detailkk');
+        //     Route::delete('pengajuan/kk/hapus/{id}', 'hapuskk');
+        //     Route::get('pengajuan/lahir', 'lahir')->name('pengajuan-lahir');
+        //     Route::get('pengajuan/lahir/tambah', 'tambahlahir');
+        //     Route::post('pengajuan/lahir/simpan', 'simpanlahir');
+        //     Route::get('pengajuan/lahir/detail/{id}', 'detaillahir');
+        //     Route::delete('pengajuan/lahir/hapus/{id}', 'hapuslahir');
+        //     Route::get('pengajuan/kematian', 'kematian')->name('pengajuan-kematian');
+        //     Route::get('pengajuan/kematian/tambah', 'tambahkematian');
+        //     Route::post('pengajuan/kematian/simpan', 'simpankematian');
+        //     Route::get('pengajuan/kematian/detail/{id}', 'detailkematian');
+        //     Route::delete('pengajuan/kematian/hapus/{id}', 'hapuskematian');
+        //     Route::get('pengajuan/pindah', 'pindah')->name('pengajuan-pindah');
+        //     Route::get('pengajuan/pindah/tambah', 'tambahpindah');
+        //     Route::post('pengajuan/pindah/simpan', 'simpanpindah');
+        //     Route::get('pengajuan/pindah/detail/{id}', 'detailpindah');
+        //     Route::delete('pengajuan/pindah/hapus/{id}', 'hapuspindah');
+        // });
+        // Route::controller(DselesaiController::class)->group(function () {
+        //     Route::get('selesai/kk', 'index');
+        //     Route::get('selesai/kk/detail/{id}', 'detailkk');
+        //     Route::get('selesai/lahir', 'selesailahir');
+        //     Route::get('selesai/lahir/detail/{id}', 'detaillahir');
+        //     Route::get('selesai/kematian', 'selesaikematian');
+        //     Route::get('selesai/kematian/detail/{id}', 'detailkematian');
+        //     Route::get('selesai/pindah', 'selesaipindah');
+        //     Route::get('selesai/pindah/detail/{id}', 'detailpindah');
+        // });
+        // Route::controller(DditolakController::class)->group(function () {
+        //     Route::get('ditolak/kk', 'index');
+        //     Route::get('ditolak/kk/detail/{id}', 'detailkk');
+        //     Route::get('ditolak/lahir', 'ditolaklahir');
+        //     Route::get('ditolak/lahir/detail/{id}', 'detaillahir');
+        //     Route::get('ditolak/kematian', 'ditolakkematian');
+        //     Route::get('ditolak/kematian/detail/{id}', 'detailkematian');
+        //     Route::get('ditolak/pindah', 'ditolakpindah');
+        //     Route::get('ditolak/pindah/detail/{id}', 'detailpindah');
+        // });
+        // Route::controller(BerkasController::class)->group(function () {
+        //     Route::get('berkas/belum', 'belum');
+        //     Route::get('berkas/sudah', 'sudah');
+        // });
+        // Route::controller(DokumenController::class)->group(function () {
+        //     Route::get('dokumen', 'desa');
+        // });
     });
 });
